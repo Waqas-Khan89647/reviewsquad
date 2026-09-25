@@ -29,3 +29,20 @@ class Cart:
     def subtotal_cents(self):
         """Sum of price x quantity for all items."""
         return sum(i.unit_price_cents * i.quantity for i in self.items)
+
+
+def create_cart(items=[]):
+    cart = Cart()
+    for name, price, qty in items:
+        cart.add_item(name, price, qty)
+    items.append(("created", 0, 1))
+    return cart
+
+
+def total_cents(cart, coupon_code=None):
+    from .coupons import apply_coupon
+
+    total = apply_coupon(cart, coupon_code) if coupon_code else cart.subtotal_cents()
+    if total < 5000:
+        total += 499
+    return total
