@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.env
+*.pem
+*.key
+credentials*.json
+apikey*.json
+.reviewsquad/junit_*.xml
