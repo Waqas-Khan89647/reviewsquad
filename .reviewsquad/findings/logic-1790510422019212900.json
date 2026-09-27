@@ -1,0 +1,10 @@
+{
+  "reviewer": "logic",
+  "file": "store/cart.py",
+  "line": 46,
+  "end_line": 46,
+  "severity": "low",
+  "title": "Magic numbers 5000 and 499 used for delivery fee threshold and fee amount",
+  "fix": "Extract named constants, e.g. FREE_DELIVERY_THRESHOLD_CENTS = 5000 and DELIVERY_FEE_CENTS = 499. Rule 4.2.",
+  "created": 1790510422.0192108
+}

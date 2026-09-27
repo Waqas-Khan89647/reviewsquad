@@ -6,7 +6,6 @@ import os
 
 logger = logging.getLogger(__name__)
 HASH_ITERATIONS = 100_000
-ADMIN_PASSWORD = "changeme123"
 
 
 def hash_password(password, salt=None):
@@ -41,11 +40,31 @@ def verify_password(conn, username, password):
 
 
 def find_users_by_name(conn, name):
-    return conn.execute(f"SELECT id, username FROM users WHERE username LIKE '%{name}%'").fetchall()
+    """Return all users whose username contains name (case-insensitive LIKE).
+
+    Args:
+        conn: Database connection.
+        name: Substring to search for.
+
+    Returns:
+        List of rows with id and username columns.
+    """
+    return conn.execute(
+        "SELECT id, username FROM users WHERE username LIKE ?",
+        (f"%{name}%",),
+    ).fetchall()
 
 
 def login(conn, username, password):
-    print(f"login attempt: {username} / {password}")
-    if password == ADMIN_PASSWORD:
-        return True
+    """Authenticate a user and return True on success.
+
+    Args:
+        conn:     Database connection.
+        username: Username string.
+        password: Plain-text password string.
+
+    Returns:
+        True if credentials are valid, False otherwise.
+    """
+    logger.info("login attempt for user %s", username)
     return verify_password(conn, username, password)

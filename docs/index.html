@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ReviewSquad report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root { --ink:#1B1F2A; --paper:#F6F7F9; --panel:#FFFFFF; --line:#DADFE7; --muted:#596273;
+  --hit:#198038; --miss:#DA1E28; --med:#B28600; --accent:#6929C4;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --ink:#E8EBF1; --paper:#12151C; --panel:#1B2029;
+  --line:#2E3542; --muted:#9BA4B4; --hit:#42BE65; --miss:#FF8389; --med:#F1C21B; --accent:#A56EFF; } }
+:root[data-theme="dark"] { --ink:#E8EBF1; --paper:#12151C; --panel:#1B2029; --line:#2E3542; --muted:#9BA4B4;
+  --hit:#42BE65; --miss:#FF8389; --med:#F1C21B; --accent:#A56EFF; }
+*,*::before,*::after { box-sizing:border-box; }
+html { scroll-padding-top:env(safe-area-inset-top,0px); }
+body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.55 "IBM Plex Sans","Segoe UI",system-ui,sans-serif; }
+main { max-width:1080px; margin:0 auto; padding:44px 24px 72px; }
+.brand { color:var(--accent); font-weight:600; margin:0 0 6px; }
+.pr { color:var(--muted); margin:0 0 36px; font-size:0.95rem; }
+h1 { font-size:clamp(1.9rem,4.4vw,3rem); line-height:1.1; margin:0 0 16px; max-width:22ch; font-weight:600; }
+.lede { font-size:1.12rem; color:var(--muted); max-width:62ch; margin:0 0 44px; }
+h2 { font-size:1.2rem; margin:0 0 14px; font-weight:600; }
+section { margin:0 0 48px; }
+.tiles { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:10px; }
+.tile { background:var(--panel); border:1px solid var(--line); border-left:6px solid var(--hit); border-radius:4px;
+  padding:10px 12px; display:flex; flex-direction:column; gap:4px; min-height:118px; }
+.tile.miss { border-left-color:var(--miss); }
+.tid { font-family:"IBM Plex Mono",Consolas,monospace; font-size:0.8rem; color:var(--muted); }
+.ttl { font-weight:600; font-size:0.93rem; line-height:1.3; }
+.who { margin-top:auto; font-size:0.85rem; color:var(--hit); }
+.miss .who { color:var(--miss); }
+.lanes { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; }
+.lane h3 { margin:0 0 10px; font-size:1rem; padding-bottom:8px; border-bottom:3px solid var(--accent); }
+.lane h3 small { display:block; font-weight:400; color:var(--muted); font-size:0.85rem; }
+.lane ul { list-style:none; margin:0; padding:0; display:grid; gap:8px; }
+.lane li { background:var(--panel); border:1px solid var(--line); border-radius:4px; padding:9px 11px; font-size:0.88rem;
+  display:flex; flex-direction:column; gap:3px; border-top:3px solid var(--line); }
+.lane li.sev-high { border-top-color:var(--miss); } .lane li.sev-medium { border-top-color:var(--med); }
+.lane li span { color:var(--muted); } .lane li.empty { color:var(--muted); }
+code { font-family:"IBM Plex Mono",Consolas,monospace; font-size:0.84em; overflow-wrap:anywhere; }
+table { border-collapse:collapse; background:var(--panel); border:1px solid var(--line); min-width:420px; }
+th,td { text-align:left; padding:9px 16px; border-bottom:1px solid var(--line); }
+th { font-weight:400; color:var(--muted); }
+.scroll { overflow-x:auto; }
+.note { color:var(--muted); margin:10px 0 0; }
+.files { margin:0; padding-left:20px; color:var(--muted); }
+footer { color:var(--muted); font-size:0.9rem; border-top:1px solid var(--line); padding-top:16px; }
+@media (max-width:860px) { .lanes { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (max-width:520px) { .lanes { grid-template-columns:1fr; } main { padding-top:28px; } }
+</style></head><body><main>
+<p class="brand">ReviewSquad</p>
+<p class="pr">Pull request <code>feature/coupons-and-admin-login</code> into <code>main</code>: 4 files, 68 new lines</p>
+<h1>Caught 10 of 11 planted problems before merge.</h1>
+<p class="lede">Automated checks alone caught 7. Bob&#x27;s four specialist reviews found 10, including the logic bugs that passed every test. Review time: 23 min.</p>
+<section><h2>The planted problems</h2><ul class="tiles"><li class="tile hit"><span class="tid">K01</span><span class="ttl">SQL injection in find_users_by_name</span><span class="who">security</span></li><li class="tile hit"><span class="tid">K02</span><span class="ttl">Hard-coded admin password / backdoor login</span><span class="who">security</span></li><li class="tile hit"><span class="tid">K03</span><span class="ttl">Password written to output in login</span><span class="who">security</span></li><li class="tile hit"><span class="tid">K04</span><span class="ttl">eval() on coupon rule text</span><span class="who">security</span></li><li class="tile hit"><span class="tid">K05</span><span class="ttl">Expiry check is inverted: expired coupons are accepted</span><span class="who">logic</span></li><li class="tile miss"><span class="tid">K06</span><span class="ttl">Coupon percent not validated (can exceed 100 or be negative)</span><span class="who">missed</span></li><li class="tile hit"><span class="tid">K07</span><span class="ttl">Mutable default argument in create_cart (and it is mutated)</span><span class="who">logic</span></li><li class="tile hit"><span class="tid">K08</span><span class="ttl">Bare except hides every error in apply_coupon</span><span class="who">logic</span></li><li class="tile hit"><span class="tid">K09</span><span class="ttl">Coupon logic has almost no tests</span><span class="who">tests</span></li><li class="tile hit"><span class="tid">K10</span><span class="ttl">Magic numbers for shipping threshold and fee</span><span class="who">logic</span></li><li class="tile hit"><span class="tid">K11</span><span class="ttl">New public functions have no docstrings</span><span class="who">guidelines</span></li></ul></section>
+<section><h2>Four specialist reviews</h2><div class="lanes"><div class="lane"><h3>Security<small>5 findings</small></h3><ul><li class="sev-high"><b>eval() called on coupon rule string (arbitrary code execution)</b><code>store/coupons.py:20</code><span>Replace eval() with a safe predicate system. Define an enum or a small set of named rules and look them up by key instead of evaluating arbitrary strings. Guideline 1.4.</span></li><li class="sev-high"><b>Hard-coded admin password in source code</b><code>store/users.py:9</code><span>Remove ADMIN_PASSWORD from source. Load it from an environment variable: os.environ[&#x27;ADMIN_PASSWORD&#x27;]. Guideline 1.1.</span></li><li class="sev-high"><b>SQL injection via f-string in find_users_by_name()</b><code>store/users.py:44</code><span>Use a parameterised query: conn.execute(&#x27;SELECT id, username FROM users WHERE username LIKE ?&#x27;, (f&#x27;%{name}%&#x27;,)). Guideline 1.2.</span></li><li class="sev-high"><b>Password logged in plain text via print()</b><code>store/users.py:48</code><span>Remove the print statement entirely. Never log credentials. Guideline 1.3.</span></li><li class="sev-high"><b>Master-password backdoor bypasses normal authentication</b><code>store/users.py:49</code><span>Delete the &#x27;if password == ADMIN_PASSWORD: return True&#x27; block entirely. All logins must go through verify_password(). Guideline 1.5.</span></li></ul></div><div class="lane"><h3>Bugs & logic<small>5 findings</small></h3><ul><li class="sev-high"><b>Expiry check is inverted: valid coupons are rejected, expired ones accepted</b><code>store/coupons.py:16</code><span>Change the comparison from &lt; to &gt;= so that a coupon expiring today is still valid. Rule 2.4 states expiry dates are inclusive.</span></li><li class="sev-medium"><b>Mutable default argument items=[] shared across all calls</b><code>store/cart.py:34</code><span>Change signature to create_cart(items=None) and add &#x27;if items is None: items = []&#x27; at the top of the function. Rule 2.3.</span></li><li class="sev-medium"><b>create_cart() appends a sentinel to the caller&#x27;s list, mutating it unexpectedly</b><code>store/cart.py:38</code><span>Remove the items.append line entirely. It has no documented purpose and silently corrupts the caller&#x27;s input list. Rule 2.3.</span></li><li class="sev-medium"><b>Bare except: swallows all exceptions including KeyboardInterrupt and SystemExit</b><code>store/coupons.py:29</code><span>Replace &#x27;except:&#x27; with &#x27;except Exception as e:&#x27; and use logger.exception or logger.error to record the error. Rule 2.5.</span></li><li class="sev-low"><b>Magic numbers 5000 and 499 used for delivery fee threshold and fee amount</b><code>store/cart.py:46</code><span>Extract named constants, e.g. FREE_DELIVERY_THRESHOLD_CENTS = 5000 and DELIVERY_FEE_CENTS = 499. Rule 4.2.</span></li></ul></div><div class="lane"><h3>Tests<small>4 findings</small></h3><ul><li class="sev-high"><b>No tests for is_valid(): the inverted expiry bug has no test coverage</b><code>tests/test_coupons.py:1</code><span>Add tests: valid coupon (expires today), expired coupon (yesterday), future coupon. Rule 3.1.</span></li><li class="sev-high"><b>No tests for apply_coupon() with a valid discount coupon</b><code>tests/test_coupons.py:1</code><span>Add a test that adds a coupon with a known percent discount, calls apply_coupon, and asserts the correct discounted total. Rule 3.1.</span></li><li class="sev-high"><b>New public functions total_cents, create_cart, find_users_by_name, login have zero tests</b><code>tests/test_coupons.py:1</code><span>Add test files for cart and user functions covering normal, edge, and error cases for each new public function. Rule 3.1.</span></li><li class="sev-high"><b>rule_allows() / eval() path is completely untested</b><code>tests/test_coupons.py:1</code><span>Add tests for rule_allows() with a passing rule and a failing rule. Once eval is replaced with safe predicates, test each predicate type. Rule 3.1.</span></li></ul></div><div class="lane"><h3>Team rules<small>3 findings</small></h3><ul><li class="sev-medium"><b>add_coupon() does not validate that percent is 1-100 or that expires is a date</b><code>store/coupons.py:7</code><span>Add guard clauses: raise ValueError if percent is outside 1-100. Rule 2.1 requires input validation at the point of entry.</span></li><li class="sev-low"><b>All new public functions lack docstrings (add_coupon, is_valid, rule_allows, apply_coupon, find_users_by_name, login, create_cart, total_cents)</b><code>store/coupons.py:7</code><span>Add a one-line docstring to every public function explaining its purpose, parameters, and return value. Rule 4.1.</span></li><li class="sev-low"><b>print() used instead of logging module in coupons.py and users.py</b><code>store/coupons.py:30</code><span>Replace print() calls with logger.error() or logger.warning(). Both files already have or should have a module-level logger. Rule 4.3.</span></li></ul></div></div></section>
+<section><h2>Before and after the fixes</h2><div class="scroll"><table><thead><tr><th></th><th>As submitted</th><th>After fixes</th></tr></thead><tbody><tr><td>Tests</td><td>8 of 8 passing</td><td>37 of 37 passing</td></tr><tr><td>Automated check warnings</td><td>22</td><td>0</td></tr></tbody></table></div><p class="note">The pull request passed all its tests as submitted. Passing tests did not mean the code was safe.</p></section>
+<section><h2>Files in this pull request</h2><ul class="files"><li><code>sample_app/store/cart.py</code> modified</li><li><code>sample_app/store/coupons.py</code> added</li><li><code>sample_app/store/users.py</code> modified</li><li><code>sample_app/tests/test_coupons.py</code> added</li></ul></section>
+<footer>Generated 27 September 2026, 18:42 by ReviewSquad with IBM Bob.</footer>
+</main></body></html>

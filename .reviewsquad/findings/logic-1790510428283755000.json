@@ -1,0 +1,10 @@
+{
+  "reviewer": "logic",
+  "file": "store/coupons.py",
+  "line": 29,
+  "end_line": 29,
+  "severity": "medium",
+  "title": "Bare except: swallows all exceptions including KeyboardInterrupt and SystemExit",
+  "fix": "Replace 'except:' with 'except Exception as e:' and use logger.exception or logger.error to record the error. Rule 2.5.",
+  "created": 1790510428.2837527
+}

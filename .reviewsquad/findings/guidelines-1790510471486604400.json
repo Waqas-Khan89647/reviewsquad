@@ -1,0 +1,10 @@
+{
+  "reviewer": "guidelines",
+  "file": "store/coupons.py",
+  "line": 7,
+  "end_line": 7,
+  "severity": "medium",
+  "title": "add_coupon() does not validate that percent is 1-100 or that expires is a date",
+  "fix": "Add guard clauses: raise ValueError if percent is outside 1-100. Rule 2.1 requires input validation at the point of entry.",
+  "created": 1790510471.4865816
+}

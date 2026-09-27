@@ -1,0 +1,10 @@
+{
+  "reviewer": "tests",
+  "file": "tests/test_coupons.py",
+  "line": 1,
+  "end_line": 1,
+  "severity": "high",
+  "title": "No tests for is_valid(): the inverted expiry bug has no test coverage",
+  "fix": "Add tests: valid coupon (expires today), expired coupon (yesterday), future coupon. Rule 3.1.",
+  "created": 1790510434.509763
+}

@@ -1,0 +1,10 @@
+{
+  "reviewer": "logic",
+  "file": "store/coupons.py",
+  "line": 16,
+  "end_line": 16,
+  "severity": "high",
+  "title": "Expiry check is inverted: valid coupons are rejected, expired ones accepted",
+  "fix": "Change the comparison from < to >= so that a coupon expiring today is still valid. Rule 2.4 states expiry dates are inclusive.",
+  "created": 1790510396.7641115
+}

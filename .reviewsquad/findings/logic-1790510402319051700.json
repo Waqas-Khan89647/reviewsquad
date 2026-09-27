@@ -1,0 +1,10 @@
+{
+  "reviewer": "logic",
+  "file": "store/cart.py",
+  "line": 34,
+  "end_line": 34,
+  "severity": "medium",
+  "title": "Mutable default argument items=[] shared across all calls",
+  "fix": "Change signature to create_cart(items=None) and add 'if items is None: items = []' at the top of the function. Rule 2.3.",
+  "created": 1790510402.3190498
+}

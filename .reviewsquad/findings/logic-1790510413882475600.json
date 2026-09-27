@@ -1,0 +1,10 @@
+{
+  "reviewer": "logic",
+  "file": "store/cart.py",
+  "line": 38,
+  "end_line": 38,
+  "severity": "medium",
+  "title": "create_cart() appends a sentinel to the caller's list, mutating it unexpectedly",
+  "fix": "Remove the items.append line entirely. It has no documented purpose and silently corrupts the caller's input list. Rule 2.3.",
+  "created": 1790510413.8824737
+}

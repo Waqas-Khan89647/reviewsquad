@@ -1,0 +1,251 @@
+{
+  "label": "before",
+  "findings": [
+    {
+      "check": "mutable-default",
+      "area": "logic",
+      "severity": "medium",
+      "file": "store/cart.py",
+      "line": 34,
+      "title": "Mutable default argument in create_cart()",
+      "fix": "Use None as the default and create the list inside the function."
+    },
+    {
+      "check": "missing-docstring",
+      "area": "guidelines",
+      "severity": "low",
+      "file": "store/cart.py",
+      "line": 34,
+      "title": "Public function create_cart() has no docstring",
+      "fix": "Add a one-line docstring saying what it does."
+    },
+    {
+      "check": "untested-function",
+      "area": "tests",
+      "severity": "high",
+      "file": "store/cart.py",
+      "line": 34,
+      "title": "New function create_cart() is never called by any test",
+      "fix": "Add unit tests covering normal, edge and error cases."
+    },
+    {
+      "check": "missing-docstring",
+      "area": "guidelines",
+      "severity": "low",
+      "file": "store/cart.py",
+      "line": 42,
+      "title": "Public function total_cents() has no docstring",
+      "fix": "Add a one-line docstring saying what it does."
+    },
+    {
+      "check": "untested-function",
+      "area": "tests",
+      "severity": "high",
+      "file": "store/cart.py",
+      "line": 42,
+      "title": "New function total_cents() is never called by any test",
+      "fix": "Add unit tests covering normal, edge and error cases."
+    },
+    {
+      "check": "missing-docstring",
+      "area": "guidelines",
+      "severity": "low",
+      "file": "store/coupons.py",
+      "line": 7,
+      "title": "Public function add_coupon() has no docstring",
+      "fix": "Add a one-line docstring saying what it does."
+    },
+    {
+      "check": "untested-function",
+      "area": "tests",
+      "severity": "high",
+      "file": "store/coupons.py",
+      "line": 7,
+      "title": "New function add_coupon() is never called by any test",
+      "fix": "Add unit tests covering normal, edge and error cases."
+    },
+    {
+      "check": "missing-docstring",
+      "area": "guidelines",
+      "severity": "low",
+      "file": "store/coupons.py",
+      "line": 11,
+      "title": "Public function is_valid() has no docstring",
+      "fix": "Add a one-line docstring saying what it does."
+    },
+    {
+      "check": "untested-function",
+      "area": "tests",
+      "severity": "high",
+      "file": "store/coupons.py",
+      "line": 11,
+      "title": "New function is_valid() is never called by any test",
+      "fix": "Add unit tests covering normal, edge and error cases."
+    },
+    {
+      "check": "missing-docstring",
+      "area": "guidelines",
+      "severity": "low",
+      "file": "store/coupons.py",
+      "line": 19,
+      "title": "Public function rule_allows() has no docstring",
+      "fix": "Add a one-line docstring saying what it does."
+    },
+    {
+      "check": "untested-function",
+      "area": "tests",
+      "severity": "high",
+      "file": "store/coupons.py",
+      "line": 19,
+      "title": "New function rule_allows() is never called by any test",
+      "fix": "Add unit tests covering normal, edge and error cases."
+    },
+    {
+      "check": "eval-exec",
+      "area": "security",
+      "severity": "high",
+      "file": "store/coupons.py",
+      "line": 20,
+      "title": "eval()/exec() on data",
+      "fix": "Never evaluate text as code; parse it explicitly.",
+      "code": "return eval(COUPONS[code][\"rule\"], {\"cart\": cart})"
+    },
+    {
+      "check": "missing-docstring",
+      "area": "guidelines",
+      "severity": "low",
+      "file": "store/coupons.py",
+      "line": 23,
+      "title": "Public function apply_coupon() has no docstring",
+      "fix": "Add a one-line docstring saying what it does."
+    },
+    {
+      "check": "bare-except",
+      "area": "logic",
+      "severity": "medium",
+      "file": "store/coupons.py",
+      "line": 29,
+      "title": "Bare except hides all errors",
+      "fix": "Catch specific exceptions and log them.",
+      "code": "except:"
+    },
+    {
+      "check": "print-call",
+      "area": "guidelines",
+      "severity": "low",
+      "file": "store/coupons.py",
+      "line": 30,
+      "title": "print() used instead of logging",
+      "fix": "Use the logging module.",
+      "code": "print(\"coupon error\")"
+    },
+    {
+      "check": "hardcoded-secret",
+      "area": "security",
+      "severity": "high",
+      "file": "store/users.py",
+      "line": 9,
+      "title": "Hard-coded password/secret",
+      "fix": "Load secrets from environment variables or a secrets manager.",
+      "code": "ADMIN_PASSWORD = \"changeme123\""
+    },
+    {
+      "check": "missing-docstring",
+      "area": "guidelines",
+      "severity": "low",
+      "file": "store/users.py",
+      "line": 43,
+      "title": "Public function find_users_by_name() has no docstring",
+      "fix": "Add a one-line docstring saying what it does."
+    },
+    {
+      "check": "untested-function",
+      "area": "tests",
+      "severity": "high",
+      "file": "store/users.py",
+      "line": 43,
+      "title": "New function find_users_by_name() is never called by any test",
+      "fix": "Add unit tests covering normal, edge and error cases."
+    },
+    {
+      "check": "sql-string",
+      "area": "security",
+      "severity": "high",
+      "file": "store/users.py",
+      "line": 44,
+      "title": "SQL built from a string (injection risk)",
+      "fix": "Use a parameterised query with ? placeholders.",
+      "code": "return conn.execute(f\"SELECT id, username FROM users WHERE username LIKE '%{name}%'\").fetchall()"
+    },
+    {
+      "check": "missing-docstring",
+      "area": "guidelines",
+      "severity": "low",
+      "file": "store/users.py",
+      "line": 47,
+      "title": "Public function login() has no docstring",
+      "fix": "Add a one-line docstring saying what it does."
+    },
+    {
+      "check": "untested-function",
+      "area": "tests",
+      "severity": "high",
+      "file": "store/users.py",
+      "line": 47,
+      "title": "New function login() is never called by any test",
+      "fix": "Add unit tests covering normal, edge and error cases."
+    },
+    {
+      "check": "print-call",
+      "area": "guidelines",
+      "severity": "low",
+      "file": "store/users.py",
+      "line": 48,
+      "title": "print() used instead of logging",
+      "fix": "Use the logging module.",
+      "code": "print(f\"login attempt: {username} / {password}\")"
+    }
+  ],
+  "tests": [
+    {
+      "name": "sample_app.tests.test_cart::test_subtotal",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "sample_app.tests.test_cart::test_quantity_must_be_positive",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "sample_app.tests.test_cart::test_negative_price_rejected",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "sample_app.tests.test_coupons::test_unknown_coupon_changes_nothing",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "sample_app.tests.test_users::test_create_and_verify_user",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "sample_app.tests.test_users::test_unknown_user_cannot_log_in",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "sample_app.tests.test_users::test_get_user",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "sample_app.tests.test_users::test_passwords_are_not_stored_in_plain_text",
+      "passed": true,
+      "message": ""
+    }
+  ]
+}

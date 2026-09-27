@@ -2,6 +2,9 @@
 from dataclasses import dataclass, field
 from typing import List
 
+FREE_DELIVERY_THRESHOLD_CENTS = 5000
+DELIVERY_FEE_CENTS = 499
+
 
 @dataclass
 class Item:
@@ -31,18 +34,40 @@ class Cart:
         return sum(i.unit_price_cents * i.quantity for i in self.items)
 
 
-def create_cart(items=[]):
+def create_cart(items=None):
+    """Create and return a Cart pre-populated with the given items.
+
+    Args:
+        items: Optional list of (name, price_cents, quantity) tuples.
+
+    Returns:
+        A new Cart instance.
+    """
+    if items is None:
+        items = []
     cart = Cart()
     for name, price, qty in items:
         cart.add_item(name, price, qty)
-    items.append(("created", 0, 1))
     return cart
 
 
 def total_cents(cart, coupon_code=None):
+    """Return the total to charge in cents, including any delivery fee.
+
+    A delivery fee of DELIVERY_FEE_CENTS is added when the order subtotal
+    is below FREE_DELIVERY_THRESHOLD_CENTS. An optional coupon_code is
+    applied before the threshold check.
+
+    Args:
+        cart: A Cart instance.
+        coupon_code: Optional coupon code string.
+
+    Returns:
+        Total amount in integer cents.
+    """
     from .coupons import apply_coupon
 
     total = apply_coupon(cart, coupon_code) if coupon_code else cart.subtotal_cents()
-    if total < 5000:
-        total += 499
+    if total < FREE_DELIVERY_THRESHOLD_CENTS:
+        total += DELIVERY_FEE_CENTS
     return total

@@ -1,0 +1,10 @@
+{
+  "reviewer": "security",
+  "file": "store/users.py",
+  "line": 9,
+  "end_line": 9,
+  "severity": "high",
+  "title": "Hard-coded admin password in source code",
+  "fix": "Remove ADMIN_PASSWORD from source. Load it from an environment variable: os.environ['ADMIN_PASSWORD']. Guideline 1.1.",
+  "created": 1790510358.2909217
+}

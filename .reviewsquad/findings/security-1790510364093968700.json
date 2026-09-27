@@ -1,0 +1,10 @@
+{
+  "reviewer": "security",
+  "file": "store/users.py",
+  "line": 44,
+  "end_line": 44,
+  "severity": "high",
+  "title": "SQL injection via f-string in find_users_by_name()",
+  "fix": "Use a parameterised query: conn.execute('SELECT id, username FROM users WHERE username LIKE ?', (f'%{name}%',)). Guideline 1.2.",
+  "created": 1790510364.0939658
+}
