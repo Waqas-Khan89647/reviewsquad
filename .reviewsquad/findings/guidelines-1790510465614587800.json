@@ -1,0 +1,10 @@
+{
+  "reviewer": "guidelines",
+  "file": "store/coupons.py",
+  "line": 30,
+  "end_line": 30,
+  "severity": "low",
+  "title": "print() used instead of logging module in coupons.py and users.py",
+  "fix": "Replace print() calls with logger.error() or logger.warning(). Both files already have or should have a module-level logger. Rule 4.3.",
+  "created": 1790510465.6145859
+}

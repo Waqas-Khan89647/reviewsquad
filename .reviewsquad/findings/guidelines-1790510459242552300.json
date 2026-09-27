@@ -1,0 +1,10 @@
+{
+  "reviewer": "guidelines",
+  "file": "store/coupons.py",
+  "line": 7,
+  "end_line": 7,
+  "severity": "low",
+  "title": "All new public functions lack docstrings (add_coupon, is_valid, rule_allows, apply_coupon, find_users_by_name, login, create_cart, total_cents)",
+  "fix": "Add a one-line docstring to every public function explaining its purpose, parameters, and return value. Rule 4.1.",
+  "created": 1790510459.2425504
+}

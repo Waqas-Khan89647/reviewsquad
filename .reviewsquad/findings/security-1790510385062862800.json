@@ -1,0 +1,10 @@
+{
+  "reviewer": "security",
+  "file": "store/users.py",
+  "line": 49,
+  "end_line": 49,
+  "severity": "high",
+  "title": "Master-password backdoor bypasses normal authentication",
+  "fix": "Delete the 'if password == ADMIN_PASSWORD: return True' block entirely. All logins must go through verify_password(). Guideline 1.5.",
+  "created": 1790510385.0628562
+}

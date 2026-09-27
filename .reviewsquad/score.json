@@ -1,0 +1,116 @@
+{
+  "total": 11,
+  "caught_squad": 10,
+  "caught_checks_only": 7,
+  "caught_agents": 10,
+  "issues": [
+    {
+      "id": "K01",
+      "title": "SQL injection in find_users_by_name",
+      "area": "security",
+      "severity": "high",
+      "caught_by_agents": [
+        "security"
+      ],
+      "caught_by_checks": true
+    },
+    {
+      "id": "K02",
+      "title": "Hard-coded admin password / backdoor login",
+      "area": "security",
+      "severity": "high",
+      "caught_by_agents": [
+        "security"
+      ],
+      "caught_by_checks": true
+    },
+    {
+      "id": "K03",
+      "title": "Password written to output in login",
+      "area": "security",
+      "severity": "high",
+      "caught_by_agents": [
+        "security"
+      ],
+      "caught_by_checks": false
+    },
+    {
+      "id": "K04",
+      "title": "eval() on coupon rule text",
+      "area": "security",
+      "severity": "high",
+      "caught_by_agents": [
+        "security"
+      ],
+      "caught_by_checks": true
+    },
+    {
+      "id": "K05",
+      "title": "Expiry check is inverted: expired coupons are accepted",
+      "area": "logic",
+      "severity": "high",
+      "caught_by_agents": [
+        "logic"
+      ],
+      "caught_by_checks": false
+    },
+    {
+      "id": "K06",
+      "title": "Coupon percent not validated (can exceed 100 or be negative)",
+      "area": "logic",
+      "severity": "medium",
+      "caught_by_agents": [],
+      "caught_by_checks": false
+    },
+    {
+      "id": "K07",
+      "title": "Mutable default argument in create_cart (and it is mutated)",
+      "area": "logic",
+      "severity": "medium",
+      "caught_by_agents": [
+        "logic"
+      ],
+      "caught_by_checks": true
+    },
+    {
+      "id": "K08",
+      "title": "Bare except hides every error in apply_coupon",
+      "area": "logic",
+      "severity": "medium",
+      "caught_by_agents": [
+        "logic"
+      ],
+      "caught_by_checks": true
+    },
+    {
+      "id": "K09",
+      "title": "Coupon logic has almost no tests",
+      "area": "tests",
+      "severity": "high",
+      "caught_by_agents": [
+        "tests"
+      ],
+      "caught_by_checks": true
+    },
+    {
+      "id": "K10",
+      "title": "Magic numbers for shipping threshold and fee",
+      "area": "guidelines",
+      "severity": "low",
+      "caught_by_agents": [
+        "logic"
+      ],
+      "caught_by_checks": false
+    },
+    {
+      "id": "K11",
+      "title": "New public functions have no docstrings",
+      "area": "guidelines",
+      "severity": "low",
+      "caught_by_agents": [
+        "guidelines"
+      ],
+      "caught_by_checks": true
+    }
+  ]
+}

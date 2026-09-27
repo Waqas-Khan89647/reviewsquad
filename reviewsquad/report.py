@@ -26,7 +26,7 @@ def build():
     if score:
         headline = f"Caught {score['caught_squad']} of {score['total']} planted problems before merge."
         lede = (f"Automated checks alone caught {score['caught_checks_only']}. "
-                f"Bob's four reviewer agents found {score['caught_agents']}, including the logic bugs "
+                f"Bob's four specialist reviews found {score['caught_agents']}, including the logic bugs "
                 f"that passed every test.")
     else:
         headline = f"{len(items)} review findings on {e(pr['branch'])}."
@@ -135,7 +135,7 @@ footer {{ color:var(--muted); font-size:0.9rem; border-top:1px solid var(--line)
 <h1>{headline}</h1>
 <p class="lede">{lede}</p>
 {tiles}
-<section><h2>Four reviewers, working in parallel</h2><div class="lanes">{lanes}</div></section>
+<section><h2>Four specialist reviews</h2><div class="lanes">{lanes}</div></section>
 <section><h2>Before and after the fixes</h2><div class="scroll">{facts}</div>{note}</section>
 <section><h2>Files in this pull request</h2><ul class="files">{files}</ul></section>
 <footer>Generated {generated} by ReviewSquad with IBM Bob.</footer>

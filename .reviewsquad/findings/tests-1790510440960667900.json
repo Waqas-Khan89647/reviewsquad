@@ -1,0 +1,10 @@
+{
+  "reviewer": "tests",
+  "file": "tests/test_coupons.py",
+  "line": 1,
+  "end_line": 1,
+  "severity": "high",
+  "title": "No tests for apply_coupon() with a valid discount coupon",
+  "fix": "Add a test that adds a coupon with a known percent discount, calls apply_coupon, and asserts the correct discounted total. Rule 3.1.",
+  "created": 1790510440.960665
+}

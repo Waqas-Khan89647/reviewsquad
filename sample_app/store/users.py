@@ -37,3 +37,34 @@ def verify_password(conn, username, password):
         return False
     salt, _ = row["password_hash"].split("$", 1)
     return hmac.compare_digest(hash_password(password, salt), row["password_hash"])
+
+
+def find_users_by_name(conn, name):
+    """Return all users whose username contains name (case-insensitive LIKE).
+
+    Args:
+        conn: Database connection.
+        name: Substring to search for.
+
+    Returns:
+        List of rows with id and username columns.
+    """
+    return conn.execute(
+        "SELECT id, username FROM users WHERE username LIKE ?",
+        (f"%{name}%",),
+    ).fetchall()
+
+
+def login(conn, username, password):
+    """Authenticate a user and return True on success.
+
+    Args:
+        conn:     Database connection.
+        username: Username string.
+        password: Plain-text password string.
+
+    Returns:
+        True if credentials are valid, False otherwise.
+    """
+    logger.info("login attempt for user %s", username)
+    return verify_password(conn, username, password)

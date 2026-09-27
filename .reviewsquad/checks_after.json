@@ -1,0 +1,191 @@
+{
+  "label": "after",
+  "findings": [],
+  "tests": [
+    {
+      "name": "sample_app.tests.test_cart::test_subtotal",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "sample_app.tests.test_cart::test_quantity_must_be_positive",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "sample_app.tests.test_cart::test_negative_price_rejected",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "sample_app.tests.test_cart::test_create_cart_empty",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "sample_app.tests.test_cart::test_create_cart_with_items",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "sample_app.tests.test_cart::test_create_cart_does_not_mutate_caller_list",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "sample_app.tests.test_cart::test_create_cart_none_default_does_not_accumulate",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "sample_app.tests.test_cart::test_total_cents_adds_delivery_fee_below_threshold",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "sample_app.tests.test_cart::test_total_cents_no_delivery_fee_at_threshold",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "sample_app.tests.test_cart::test_total_cents_no_delivery_fee_above_threshold",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "sample_app.tests.test_cart::test_total_cents_with_valid_coupon",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "sample_app.tests.test_cart::test_total_cents_without_coupon_uses_subtotal",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "sample_app.tests.test_coupons::test_add_coupon_rejects_zero_percent",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "sample_app.tests.test_coupons::test_add_coupon_rejects_over_100_percent",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "sample_app.tests.test_coupons::test_add_coupon_rejects_unknown_rule",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "sample_app.tests.test_coupons::test_add_coupon_accepts_boundary_percent",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "sample_app.tests.test_coupons::test_is_valid_future_coupon",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "sample_app.tests.test_coupons::test_is_valid_coupon_expiring_today_is_still_valid",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "sample_app.tests.test_coupons::test_is_valid_expired_coupon",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "sample_app.tests.test_coupons::test_is_valid_unknown_code",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "sample_app.tests.test_coupons::test_rule_allows_always_rule",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "sample_app.tests.test_coupons::test_unknown_coupon_changes_nothing",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "sample_app.tests.test_coupons::test_apply_coupon_applies_10_percent_discount",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "sample_app.tests.test_coupons::test_apply_coupon_applies_25_percent_discount",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "sample_app.tests.test_coupons::test_apply_expired_coupon_returns_full_price",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "sample_app.tests.test_coupons::test_apply_coupon_expiring_today_is_applied",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "sample_app.tests.test_users::test_create_and_verify_user",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "sample_app.tests.test_users::test_unknown_user_cannot_log_in",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "sample_app.tests.test_users::test_get_user",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "sample_app.tests.test_users::test_passwords_are_not_stored_in_plain_text",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "sample_app.tests.test_users::test_find_users_by_name_normal",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "sample_app.tests.test_users::test_find_users_by_name_no_match",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "sample_app.tests.test_users::test_find_users_by_name_sql_injection_is_safe",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "sample_app.tests.test_users::test_login_correct_credentials",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "sample_app.tests.test_users::test_login_wrong_password",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "sample_app.tests.test_users::test_login_unknown_user",
+      "passed": true,
+      "message": ""
+    },
+    {
+      "name": "sample_app.tests.test_users::test_login_has_no_master_password_backdoor",
+      "passed": true,
+      "message": ""
+    }
+  ]
+}

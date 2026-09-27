@@ -1,0 +1,10 @@
+{
+  "reviewer": "security",
+  "file": "store/coupons.py",
+  "line": 20,
+  "end_line": 20,
+  "severity": "high",
+  "title": "eval() called on coupon rule string (arbitrary code execution)",
+  "fix": "Replace eval() with a safe predicate system. Define an enum or a small set of named rules and look them up by key instead of evaluating arbitrary strings. Guideline 1.4.",
+  "created": 1790510378.8820026
+}

@@ -1,0 +1,10 @@
+{
+  "reviewer": "security",
+  "file": "store/users.py",
+  "line": 48,
+  "end_line": 48,
+  "severity": "high",
+  "title": "Password logged in plain text via print()",
+  "fix": "Remove the print statement entirely. Never log credentials. Guideline 1.3.",
+  "created": 1790510371.6515696
+}

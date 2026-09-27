@@ -1,0 +1,106 @@
+{
+  "branch": "feature/coupons-and-admin-login",
+  "base": "main",
+  "commits": [
+    "Add discount coupons and admin login (please review)"
+  ],
+  "files": [
+    {
+      "path": "sample_app/store/cart.py",
+      "short": "store/cart.py",
+      "status": "modified",
+      "added_lines": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48
+      ]
+    },
+    {
+      "path": "sample_app/store/coupons.py",
+      "short": "store/coupons.py",
+      "status": "added",
+      "added_lines": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ]
+    },
+    {
+      "path": "sample_app/store/users.py",
+      "short": "store/users.py",
+      "status": "modified",
+      "added_lines": [
+        9,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51
+      ]
+    },
+    {
+      "path": "sample_app/tests/test_coupons.py",
+      "short": "tests/test_coupons.py",
+      "status": "added",
+      "added_lines": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    }
+  ],
+  "lines_added": 68
+}

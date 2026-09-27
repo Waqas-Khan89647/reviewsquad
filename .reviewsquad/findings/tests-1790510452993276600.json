@@ -1,0 +1,10 @@
+{
+  "reviewer": "tests",
+  "file": "tests/test_coupons.py",
+  "line": 1,
+  "end_line": 1,
+  "severity": "high",
+  "title": "rule_allows() / eval() path is completely untested",
+  "fix": "Add tests for rule_allows() with a passing rule and a failing rule. Once eval is replaced with safe predicates, test each predicate type. Rule 3.1.",
+  "created": 1790510452.9932747
+}
